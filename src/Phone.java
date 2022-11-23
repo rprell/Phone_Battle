@@ -19,6 +19,6 @@ public class Phone {
         this.phoneType = phoneType;
     }
     void describeSelf() {
-        System.out.println("The" + phoneType + " has" + storage + "GB of storage, a screen size of" + screenSize + "in, a" + processor + ", it uses the" + chargerType);
+        System.out.println("The" + phoneType + " has" + storage + "GB of storage, a screen size of" + screenSize + "in, a" + processor + ", it uses the" + chargerType + "charger, and costs $" + price);
     }
 }
