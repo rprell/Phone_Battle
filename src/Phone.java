@@ -1,6 +1,6 @@
 public class Phone {
     private int storage;
-    private int screenSize;
+    private float screenSize;
     private int price;
     private String processor;
     private String chargerType;
@@ -9,7 +9,8 @@ public class Phone {
     public Phone() {
     }
 
-    public Phone(String phoneType, int storage, int screenSize, String processor, int price, String chargerType) {
+
+    public Phone(String phoneType, int storage, float screenSize, String processor, int price, String chargerType) {
         this.setStorage(storage);
         this.setScreenSize(screenSize);
         this.setProcessor(processor);
@@ -26,11 +27,11 @@ public class Phone {
         this.storage = storage;
     }
 
-    int getScreenSize() {
+    float getScreenSize() {
         return screenSize;
     }
 
-    void setScreenSize(int screenSize) {
+    void setScreenSize(float screenSize) {
         this.screenSize = screenSize;
     }
 
@@ -58,7 +59,14 @@ public class Phone {
         this.chargerType = chargerType;
         this.phoneType = phoneType;
     }
+    String getPhoneType() {
+        return phoneType;
+    }
+
+    void setPhoneType(String phoneType) {
+        this.phoneType = phoneType;
+    }
     void describeSelf() {
-        System.out.println("The" + phoneType + " has" + storage + "GB of storage, a screen size of" + screenSize + "in, a" + processor + ", it uses the" + chargerType + "charger, and costs $" + price);
+        System.out.println("The " + phoneType + " has " + storage + "GB of storage, a screen size of " + screenSize + " inches, a " + processor + " processor, it uses the " + chargerType + "charger, and costs $" + price);
     }
 }
