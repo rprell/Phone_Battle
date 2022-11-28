@@ -1,20 +1,60 @@
 public class Phone {
-    int storage;
-    int screenSize;
-    int price;
-    String processor;
-    String chargerType;
-    String phoneType;
+    private int storage;
+    private int screenSize;
+    private int price;
+    private String processor;
+    private String chargerType;
+    private String phoneType;
 
     public Phone() {
-
     }
 
     public Phone(String phoneType, int storage, int screenSize, String processor, int price, String chargerType) {
+        this.setStorage(storage);
+        this.setScreenSize(screenSize);
+        this.setProcessor(processor);
+        this.setPrice(price);
+        this.setChargerType(chargerType);
+        this.setPhoneType(phoneType);
+    }
+
+    int getStorage() {
+        return storage;
+    }
+
+    void setStorage(int storage) {
         this.storage = storage;
+    }
+
+    int getScreenSize() {
+        return screenSize;
+    }
+
+    void setScreenSize(int screenSize) {
         this.screenSize = screenSize;
-        this.processor = processor;
+    }
+
+    int getPrice() {
+        return price;
+    }
+
+    void setPrice(int price) {
         this.price = price;
+    }
+
+    String getProcessor() {
+        return processor;
+    }
+
+    void setProcessor(String processor) {
+        this.processor = processor;
+    }
+
+    String getChargerType() {
+        return chargerType;
+    }
+
+    void setChargerType(String chargerType) {
         this.chargerType = chargerType;
         this.phoneType = phoneType;
     }
