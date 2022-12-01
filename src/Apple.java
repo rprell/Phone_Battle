@@ -9,7 +9,7 @@ public class Apple extends Phone{
 
     }
 
-    public Apple(String phoneType, int storage, int screenSize, String processor, int price, String chargerType, String faceTime, String applePay, String faceID, String Lidar) {
+    public Apple(String phoneType, int storage, float screenSize, String processor, int price, String chargerType, String faceTime, String applePay, String faceID, String Lidar) {
         super(phoneType, storage, screenSize, processor, price, chargerType);
 
     }
