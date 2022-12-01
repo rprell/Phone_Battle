@@ -19,6 +19,7 @@ public class Phone {
         this.setPhoneType(phoneType);
     }
 
+
     int getStorage() {
         return storage;
     }

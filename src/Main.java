@@ -10,6 +10,10 @@ public class Main {
 
         iphone.describeSelf();
         samsung.describeSelf();
+
+        for(Phone phone: phones) {
+            phone.describeSelf();
+        }
     }
 
 
