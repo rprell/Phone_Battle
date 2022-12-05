@@ -43,8 +43,6 @@ public class Apple extends Phone{
         LiDAR = liDAR;
     }
 
-    @Override
     void describeSelf() {
-        super.describeSelf();
     }
 }

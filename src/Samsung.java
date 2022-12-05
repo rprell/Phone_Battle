@@ -38,8 +38,7 @@ public class Samsung extends Phone{
         this.ram = ram;
     }
 
-    @Override
     void describeSelf() {
-        super.describeSelf();
+        //super.return();
     }
 }
