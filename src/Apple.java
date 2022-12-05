@@ -5,9 +5,6 @@ public class Apple extends Phone{
     private String faceID;
     private String LiDAR;
 
-    public Apple() {
-
-    }
 
     public Apple(String phoneType, int storage, float screenSize, String processor, int price, String chargerType, String faceTime, String applePay, String faceID, String Lidar) {
         super(phoneType, storage, screenSize, processor, price, chargerType);
@@ -44,5 +41,10 @@ public class Apple extends Phone{
 
     void setLiDAR(String liDAR) {
         LiDAR = liDAR;
+    }
+
+    @Override
+    void describeSelf() {
+        super.describeSelf();
     }
 }

@@ -5,11 +5,8 @@ public class Samsung extends Phone{
 
     private int ram;
 
-    public Samsung(){
 
-    }
-
-    public Samsung(String phoneType, int storage, int screenSize, String processor, int price, String chargerType, String externalMemory, String fingerPrint, int ram) {
+    public Samsung(String phoneType, int storage, float screenSize, String processor, int price, String chargerType, String externalMemory, String fingerPrint, int ram) {
         super(phoneType, storage, screenSize, processor, price, chargerType);
         this.setExternalMemory(externalMemory);
         this.setFingerPrint(fingerPrint);
@@ -39,5 +36,10 @@ public class Samsung extends Phone{
 
     void setRam(int ram) {
         this.ram = ram;
+    }
+
+    @Override
+    void describeSelf() {
+        super.describeSelf();
     }
 }

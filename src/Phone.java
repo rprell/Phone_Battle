@@ -1,4 +1,8 @@
+import java.util.ArrayList;
+
 public class Phone {
+
+    private static ArrayList<Phone> phones = new ArrayList<>();
     private int storage;
     private float screenSize;
     private int price;
@@ -17,6 +21,16 @@ public class Phone {
         this.setPrice(price);
         this.setChargerType(chargerType);
         this.setPhoneType(phoneType);
+        phones.add(this);
+    }
+
+
+    public static ArrayList<Phone> getPhones() {
+        return phones;
+    }
+
+    public static void setPhones(ArrayList<Phone> phones) {
+        Phone.phones = phones;
     }
 
 
@@ -68,6 +82,6 @@ public class Phone {
         this.phoneType = phoneType;
     }
     void describeSelf() {
-        System.out.println("The " + phoneType + " has " + storage + "GB of storage, a screen size of " + screenSize + " inches, a " + processor + " processor, it uses the " + chargerType + "charger, and costs $" + price);
+        System.out.println("The " + phoneType + " has " + storage + "GB of storage, a screen size of " + screenSize + " inches, a " + processor + " processor, it uses the " + chargerType + "charger and costs $" + price);
     }
 }
