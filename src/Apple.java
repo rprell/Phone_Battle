@@ -6,9 +6,12 @@ public class Apple extends Phone{
     private String LiDAR;
 
 
-    public Apple(String phoneType, int storage, float screenSize, String processor, int price, String chargerType, String faceTime, String applePay, String faceID, String Lidar) {
+    public Apple(String phoneType, int storage, float screenSize, String processor, int price, String chargerType, String faceTime, String applePay, String faceID, String liDAR) {
         super(phoneType, storage, screenSize, processor, price, chargerType);
-
+        this.faceTime = faceTime;
+        this.applePay = applePay;
+        this.faceID = faceID;
+        LiDAR = liDAR;
     }
 
     String getFaceTime() {
@@ -43,6 +46,7 @@ public class Apple extends Phone{
         LiDAR = liDAR;
     }
 
-    void describeSelf() {
+    public String toString() {
+        return "APPLE: The " + LiDAR + " has " + faceID + "GB of storage, a screen size of " + faceTime + " inches, a " + applePay + " processor, it uses the ";
     }
 }

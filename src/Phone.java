@@ -81,7 +81,5 @@ public class Phone {
     void setPhoneType(String phoneType) {
         this.phoneType = phoneType;
     }
-    public String toString() {
-        return "The " + phoneType + " has " + storage + "GB of storage, a screen size of " + screenSize + " inches, a " + processor + " processor, it uses the " + chargerType + "charger and costs $" + price;
-    }
-}
+
+ }

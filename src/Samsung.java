@@ -38,7 +38,7 @@ public class Samsung extends Phone{
         this.ram = ram;
     }
 
-    void describeSelf() {
-        //super.return();
+    public String toString() {
+        return "Samsung: The " + externalMemory + " is something " + fingerPrint + "yes " + ram + " big" + "The " + super.getPhoneType() + " has " + super.getStorage() + "GB of storage, a screen size of " + super.getScreenSize() + " inches, a " + super.getProcessor() + " processor, it uses the " + super.getChargerType() + "charger and costs $" + super.getPrice();
     }
 }
