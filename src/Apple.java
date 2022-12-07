@@ -11,7 +11,7 @@ public class Apple extends Phone{
         this.faceTime = faceTime;
         this.applePay = applePay;
         this.faceID = faceID;
-        LiDAR = liDAR;
+        this.LiDAR = liDAR;
     }
 
     String getFaceTime() {
@@ -47,6 +47,6 @@ public class Apple extends Phone{
     }
 
     public String toString() {
-        return "APPLE: The " + LiDAR + " has " + faceID + "GB of storage, a screen size of " + faceTime + " inches, a " + applePay + " processor, it uses the ";
+        return "APPLE: The " + super.getPhoneType() + " has " + super.getStorage() + "GB of storage, a screen size of " + super.getScreenSize() + " inches, a " + super.getProcessor() + " processor, it costs " + super.getPrice() + ", and uses a " + super.getChargerType() + " charger. It is " + faceTime + " that it uses FaceTime. It is " + applePay + " that it uses applepay. It is " + faceID + " that it uses FaceID. It is " + LiDAR + "that it uses LiDAR.";
     }
 }
