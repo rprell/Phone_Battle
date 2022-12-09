@@ -1,3 +1,7 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
 public class Samsung extends Phone{
     private String externalMemory;
 
@@ -40,5 +44,23 @@ public class Samsung extends Phone{
 
     public String toString() {
         return "Samsung: Does samsung have external memory: " + externalMemory + ". Does Samsung have finger print: " + fingerPrint + ". How much Ram does Samsung have: " + ram + "GB."  + "The " + super.getPhoneType() + " has " + super.getStorage() + "GB of storage, a screen size of " + super.getScreenSize() + " inches, a " + super.getProcessor() + " processor, it uses the " + super.getChargerType() + "charger and costs $" + super.getPrice();
+    }
+
+    static void readSamsungData() throws FileNotFoundException {
+
+        //creating File instance to reference text file in Java
+        File file = new File("SamsungPhonesData");
+
+        //Creating Scanner instance to read File in Java
+        Scanner scan = new Scanner(file);
+
+        //Reading each line of the file using Scanner class
+        int lineNumber = 1;
+        while (scan.hasNextLine()) {
+            String line = scan.nextLine();
+            System.out.println("line " + lineNumber + " :" + line);
+            lineNumber++;
+
+        }
     }
 }
