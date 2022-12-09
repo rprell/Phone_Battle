@@ -1,4 +1,7 @@
-public class Apple extends Phone{
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+public class Apple extends Phone {
 
     private String faceTime;
     private String applePay;
@@ -49,4 +52,23 @@ public class Apple extends Phone{
     public String toString() {
         return "APPLE: The " + super.getPhoneType() + " has " + super.getStorage() + "GB of storage, a screen size of " + super.getScreenSize() + " inches, a " + super.getProcessor() + " processor, it costs " + super.getPrice() + ", and uses a " + super.getChargerType() + " charger. It is " + faceTime + " that it uses FaceTime. It is " + applePay + " that it uses applepay. It is " + faceID + " that it uses FaceID. It is " + LiDAR + "that it uses LiDAR.";
     }
+
+    static void readAppleData() {
+        File file = new File("Apple Phones Data");
+
+        try {
+
+            Scanner sc = new Scanner(file);
+
+            while (sc.hasNextLine()) {
+                String i = sc.nextLine();
+                System.out.println(i);
+            }
+            sc.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
 }
+
+
