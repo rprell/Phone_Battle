@@ -1,5 +1,6 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Samsung extends Phone{
@@ -54,13 +55,40 @@ public class Samsung extends Phone{
         //Creating Scanner instance to read File in Java
         Scanner scan = new Scanner(file);
 
+
         //Reading each line of the file using Scanner class
         int lineNumber = 1;
+        int howMuchData = 0;
+        ArrayList<ArrayList> allArrays = new ArrayList<>();
         while (scan.hasNextLine()) {
+            ArrayList<String> dataArray = new ArrayList<>();
             String line = scan.nextLine();
             System.out.println("line " + lineNumber + " :" + line);
             lineNumber++;
+            Scanner lineScanner = new Scanner(line);
+            lineScanner.useDelimiter("\t");
+            if (lineNumber == 1) {
+                dataArray.add("Date");
+            }
+            while (lineScanner.hasNext()) {
+                String data = lineScanner.next();
+                dataArray.add(data);
+                if (lineNumber == 1) {
+                    howMuchData = howMuchData + 1;
+                }
+            }
+            if (dataArray.size() > 1) {
+                allArrays.add(dataArray);
+            }
+        }
 
+        // go through allArrays and extract Data strings and create objects
+
+        for (int index = 1; index < howMuchData ; index = index + 1) {
+            String date = (String)allArrays.get(0).get(index);
+
+            String screenSize = (String)allArrays.get(1).get(index);
+            new Apple(date);
         }
     }
 }
