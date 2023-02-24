@@ -11,8 +11,8 @@ public class Samsung extends Phone{
     private int ram;
 
 
-    public Samsung(String phoneType, int storage, float screenSize, String processor, int price, String chargerType, String externalMemory, String fingerPrint, int ram) {
-        super(phoneType, storage, screenSize, processor, price, chargerType);
+    public Samsung(String phoneType, int storage, float screenSize, String processor, String chargerType, String externalMemory, String fingerPrint, int ram) {
+        super(phoneType, storage, screenSize, processor, chargerType);
         this.setExternalMemory(externalMemory);
         this.setFingerPrint(fingerPrint);
         this.setRam(ram);
@@ -44,7 +44,7 @@ public class Samsung extends Phone{
     }
 
     public String toString() {
-        return "Samsung: Does samsung have external memory: " + externalMemory + ". Does Samsung have finger print: " + fingerPrint + ". How much Ram does Samsung have: " + ram + "GB."  + "The " + super.getPhoneType() + " has " + super.getStorage() + "GB of storage, a screen size of " + super.getScreenSize() + " inches, a " + super.getProcessor() + " processor, it uses the " + super.getChargerType() + "charger and costs $" + super.getPrice();
+        return "Samsung: Does samsung have external memory: " + externalMemory + ". Does Samsung have finger print: " + fingerPrint + ". How much Ram does Samsung have: " + ram + "GB."  + "The " + super.getPhoneType() + " has " + super.getStorage() + "GB of storage, a screen size of " + super.getScreenSize() + " inches, a " + super.getProcessor() + " processor, it uses the " + super.getChargerType() + "charger.";
     }
 
     static void readSamsungData() throws FileNotFoundException {
@@ -60,6 +60,7 @@ public class Samsung extends Phone{
         int lineNumber = 1;
         int howMuchData = 0;
         ArrayList<ArrayList> allArrays = new ArrayList<>();
+
         while (scan.hasNextLine()) {
             ArrayList<String> dataArray = new ArrayList<>();
             String line = scan.nextLine();
@@ -67,9 +68,7 @@ public class Samsung extends Phone{
             lineNumber++;
             Scanner lineScanner = new Scanner(line);
             lineScanner.useDelimiter("\t");
-            if (lineNumber == 1) {
-                dataArray.add("Date");
-            }
+
             while (lineScanner.hasNext()) {
                 String data = lineScanner.next();
                 dataArray.add(data);
@@ -85,10 +84,15 @@ public class Samsung extends Phone{
         // go through allArrays and extract Data strings and create objects
 
         for (int index = 1; index < howMuchData ; index = index + 1) {
-            String date = (String)allArrays.get(0).get(index);
-
-            String screenSize = (String)allArrays.get(1).get(index);
-            new Apple(date);
+            String phoneType = (String)allArrays.get(0).get(index);
+            int storage = Integer.parseInt((String)allArrays.get(1).get(index));
+            int screenSize = Integer.parseInt((String)allArrays.get(2).get(index));
+            String processor = (String)allArrays.get(3).get(index);
+            String chargerType = (String)allArrays.get(4).get(index);
+            String externalMemory = (String)allArrays.get(5).get(index);
+            String fingerprint = (String)allArrays.get(6).get(index);
+            int ram = Integer.parseInt((String)allArrays.get(7).get(index));
+            new Samsung(phoneType, storage, screenSize, processor, chargerType, externalMemory, fingerprint, ram);
         }
     }
 }

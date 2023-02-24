@@ -9,8 +9,8 @@ public class Apple extends Phone {
     private String LiDAR;
 
 
-    public Apple(String phoneType, int storage, float screenSize, String processor, int price, String chargerType, String faceTime, String applePay, String faceID, String liDAR) {
-        super(phoneType, storage, screenSize, processor, price, chargerType);
+    public Apple(String phoneType, int storage, float screenSize, String processor, String chargerType, String faceTime, String applePay, String faceID, String liDAR) {
+        super(phoneType, storage, screenSize, processor, chargerType);
         this.faceTime = faceTime;
         this.applePay = applePay;
         this.faceID = faceID;
@@ -50,7 +50,7 @@ public class Apple extends Phone {
     }
 
     public String toString() {
-        return "APPLE: The " + super.getPhoneType() + " has " + super.getStorage() + "GB of storage, a screen size of " + super.getScreenSize() + " inches, a " + super.getProcessor() + " processor, it costs " + super.getPrice() + ", and uses a " + super.getChargerType() + " charger. It is " + faceTime + " that it uses FaceTime. It is " + applePay + " that it uses applepay. It is " + faceID + " that it uses FaceID. It is " + LiDAR + "that it uses LiDAR.";
+        return "APPLE: The " + super.getPhoneType() + " has " + super.getStorage() + "GB of storage, a screen size of " + super.getScreenSize() + " inches, a " + super.getProcessor() + " processor, and uses a " + super.getChargerType() + " charger. It is " + faceTime + " that it uses FaceTime. It is " + applePay + " that it uses applepay. It is " + faceID + " that it uses FaceID. It is " + LiDAR + "that it uses LiDAR.";
     }
 
     static void readAppleData() {

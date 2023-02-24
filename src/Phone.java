@@ -14,11 +14,10 @@ public class Phone {
     }
 
 
-    public Phone(String phoneType, int storage, float screenSize, String processor, int price, String chargerType) {
+    public Phone(String phoneType, int storage, float screenSize, String processor, String chargerType) {
         this.setStorage(storage);
         this.setScreenSize(screenSize);
         this.setProcessor(processor);
-        this.setPrice(price);
         this.setChargerType(chargerType);
         this.setPhoneType(phoneType);
         phones.add(this);
@@ -48,14 +47,6 @@ public class Phone {
 
     void setScreenSize(float screenSize) {
         this.screenSize = screenSize;
-    }
-
-    int getPrice() {
-        return price;
-    }
-
-    void setPrice(int price) {
-        this.price = price;
     }
 
     String getProcessor() {
