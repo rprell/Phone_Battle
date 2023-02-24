@@ -60,7 +60,6 @@ public class Samsung extends Phone{
         int lineNumber = 1;
         int howMuchData = 0;
         ArrayList<ArrayList> allArrays = new ArrayList<>();
-
         while (scan.hasNextLine()) {
             ArrayList<String> dataArray = new ArrayList<>();
             String line = scan.nextLine();
