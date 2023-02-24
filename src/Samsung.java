@@ -85,10 +85,10 @@ public class Samsung extends Phone{
         // go through allArrays and extract Data strings and create objects
 
         for (int index = 1; index < howMuchData ; index = index + 1) {
-            String date = (String)allArrays.get(0).get(index);
+            String data = (String)allArrays.get(0).get(index);
 
             String screenSize = (String)allArrays.get(1).get(index);
-            new Apple(date);
+            //new Apple(data);
         }
     }
 }
